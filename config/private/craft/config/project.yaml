@@ -1,0 +1,200 @@
+dateModified: 1563709595
+fieldGroups:
+  3e1d0607-2fb6-4c16-a220-ef3bea3adbfc:
+    name: Options
+  9290ecbe-fcda-490b-8d76-46f83c66d59a:
+    name: Footer
+  aab2f720-4231-43ae-8dc5-ceb7610f8750:
+    name: Header
+  ca356345-2103-4405-ac65-fbfa523c9f65:
+    name: Common
+  d5396ac4-df77-4375-a7d8-5fd5adf53bfa:
+    name: Content
+fields:
+  4df6f708-812f-4043-bbdb-a3880fd5d0b8:
+    name: 'Header text'
+    handle: headerText
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    fieldGroup: aab2f720-4231-43ae-8dc5-ceb7610f8750
+    contentColumnType: text
+  5eda7e7a-6f9b-4898-8c93-4b844f554d52:
+    name: Body
+    handle: body
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: '1'
+      initialRows: '8'
+      charLimit: ''
+      columnType: text
+    fieldGroup: d5396ac4-df77-4375-a7d8-5fd5adf53bfa
+    contentColumnType: text
+  663457dc-f724-4a4b-9a56-c7e423e46f1a:
+    name: Menu
+    handle: menu
+    instructions: 'Attach to menu'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: '1'
+    fieldGroup: 3e1d0607-2fb6-4c16-a220-ef3bea3adbfc
+    contentColumnType: boolean
+  d0c29054-b596-4699-a25a-c1461d10a1ce:
+    name: 'Footer text'
+    handle: footerText
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    fieldGroup: 9290ecbe-fcda-490b-8d76-46f83c66d59a
+    contentColumnType: text
+globalSets:
+  17e7b248-c029-475b-96c8-5b7152f48852:
+    name: Header
+    handle: header
+    fieldLayouts:
+      e92aa6af-7e7f-4eda-aebb-9e317d08b728:
+        tabs:
+          -
+            name: Header
+            sortOrder: 1
+            fields:
+              4df6f708-812f-4043-bbdb-a3880fd5d0b8:
+                required: false
+                sortOrder: 1
+  9058fa6c-bb92-4134-be45-aff035086ab1:
+    name: Footer
+    handle: footer
+    fieldLayouts:
+      0ab972c6-0db9-4fb1-9e67-f415671ff010:
+        tabs:
+          -
+            name: Footer
+            sortOrder: 1
+            fields:
+              d0c29054-b596-4699-a25a-c1461d10a1ce:
+                required: false
+                sortOrder: 1
+sections:
+  8c4037c1-6320-45a5-b3c8-6a7a686e3083:
+    name: Frontpage
+    handle: frontpage
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    entryTypes:
+      75105ef3-bfe6-4a51-b3cc-be686326dac7:
+        name: Frontpage
+        handle: frontpage
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          08ad53a0-51c0-43fa-99c6-5977cbafd869:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  5eda7e7a-6f9b-4898-8c93-4b844f554d52:
+                    required: false
+                    sortOrder: 1
+              -
+                name: Options
+                sortOrder: 2
+                fields:
+                  663457dc-f724-4a4b-9a56-c7e423e46f1a:
+                    required: false
+                    sortOrder: 1
+    siteSettings:
+      b82ee5e2-9d59-4d65-832a-24ae2b1c7588:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: __home__
+        template: ''
+  db96b55a-ea65-4457-9ac8-e8536dde9718:
+    name: Pages
+    handle: pages
+    type: structure
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      b82ee5e2-9d59-4d65-832a-24ae2b1c7588:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: '{slug}'
+        template: pages/page
+    structure:
+      uid: cfc560c9-d43e-4aec-b354-5e91039a079e
+      maxLevels: null
+    entryTypes:
+      17cae89a-cc1e-45db-ade3-4bb4d09152ab:
+        name: Page
+        handle: page
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 2
+        fieldLayouts:
+          84caa486-1c5f-4156-a136-d985f69464f3:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  5eda7e7a-6f9b-4898-8c93-4b844f554d52:
+                    required: false
+                    sortOrder: 1
+              -
+                name: Options
+                sortOrder: 2
+                fields:
+                  663457dc-f724-4a4b-9a56-c7e423e46f1a:
+                    required: false
+                    sortOrder: 1
+siteGroups:
+  ce94689c-b983-4d9f-8e37-db832c57a2ef:
+    name: Branding
+sites:
+  b82ee5e2-9d59-4d65-832a-24ae2b1c7588:
+    name: Branding
+    handle: default
+    language: en-GB
+    hasUrls: true
+    baseUrl: 'http://localhost:8080'
+    sortOrder: 1
+    primary: true
+    siteGroup: ce94689c-b983-4d9f-8e37-db832c57a2ef
+system:
+  edition: solo
+  name: Branding
+  live: true
+  schemaVersion: 3.2.15
+  timeZone: America/Los_Angeles
