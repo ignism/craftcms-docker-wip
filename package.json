@@ -8,8 +8,8 @@
     "serve": "docker kill $(docker ps -q); docker-compose up -d",
     "config": "cp -r ./server/private/craft/web/ ./server/public/; cp ./config/public/index.php ./server/public; cp ./config/private/craft/config/general.php ./server/private/craft/config; cp ./config/private/craft/config/project.yaml ./server/private/craft/config",
     "stop": "docker-compose down --volumes",
-    "craft-install": "docker-compose exec web ./private/craft/craft install --username=admin --password=password --email=anonymous@mail.com --site-name=Branding --site-url=localhost:8080 --language=en-GB",
-    "craft-rebuild": "docker-compose exec web ./private/craft/craft project-config/rebuild",
+    "craft-install": "docker-compose exec web private/craft/craft install --username=admin --password=password --email=anonymous@mail.com --site-name=Branding --site-url=localhost:8080 --language=en-GB",
+    "craft-rebuild": "docker-compose exec web private/craft/craft project-config/rebuild",
     "watch": "webpack --config webpack.dev.js --watch",
     "dev": "webpack --config webpack.dev.js"
   },
