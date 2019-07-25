@@ -95,9 +95,7 @@ module.exports = {
 
   entry: {
     main: './src/index.js',
-    // head: './theme/src/head.js',
-    // app: './theme/src/app.js',
-
+    styleguide: './src/styleguide.js',
   },
 
   output: {
@@ -106,20 +104,4 @@ module.exports = {
   },
 
   mode: 'development',
-
-  // optimization: {
-  //   splitChunks: {
-  //     cacheGroups: {
-  //       vendors: {
-  //         priority: -10,
-  //         test: /[\\/]node_modules[\\/]/
-  //       }
-  //     },
-
-  //     chunks: 'async',
-  //     minChunks: 1,
-  //     minSize: 30000,
-  //     name: true
-  //   }
-  // }
 }

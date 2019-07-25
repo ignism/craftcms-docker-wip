@@ -1,4 +1,4 @@
-import * as ScrollMagic from 'scrollmagic'
+import ScrollMagic from 'scrollmagic'
 
 const scrollController = new ScrollMagic.Controller({
   globalSceneOptions: {

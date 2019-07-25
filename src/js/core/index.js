@@ -1,66 +1,104 @@
-import * as debounce from 'lodash/debounce'
-import * as ScrollMagic from 'scrollmagic'
-// 
+import debounce from 'lodash/debounce'
+import shortid from 'shortid'
+//
+import { CoreScrollScene } from './core-scroll-scene'
 import { config } from './config'
 import { eventBus } from './event-bus'
 import { scrollController } from './scroll-controller'
+import throttle from 'lodash/throttle'
 
 class Core {
   constructor() {
-
+    this.modules = []
+    this.scenes = []
   }
 
   init() {
-    this.addScrollScenes()
-    this.addEventListeners()
+    this.modules.forEach((module) => {
+      let init = module.init(module.options)
+      if (!init.status) {
+        console.error(init)
+      }
+    })
+
+    this.createScenes()
+
+    eventBus.$on('barba-before-enter', () => {
+      this.modules.forEach((module) => {
+        if (module.reinit) {
+          module.destroy()
+          module.init()
+        }
+      })
+
+      this.scenes.forEach((scene) => {
+        if (scene.reinit) {
+          scene.destroy()
+          scene.init()
+        }
+      })
+    })
+
+    window.addEventListener('resize', throttle((event) => {
+      eventBus.$emit('window-resized', event)
+    }, 250))
   }
 
-  addScrollScenes() {
-    this.sceneScrolledTop = new ScrollMagic.Scene({
-      offset: 20
-    }).addTo(scrollController)
-  
-    this.sceneScrolledTop.on('enter', (event) => {
-      eventBus.$emit('scrolled-from-top')
-    })
-  
-    this.sceneScrolledTop.on('leave', (event) => {
-      eventBus.$emit('scrolled-to-top')
-    })
+  attach(module, options = {}, reinit = false) {
+    let id = shortid.generate()
+    module.id = id
+    module.reinit = reinit
+    module.options = options
 
-    this.sceneScrolledBottom = new ScrollMagic.Scene({
-      offset: document.body.clientHeight - window.innerHeight
-    }).addTo(scrollController)
-  
-    this.sceneScrolledBottom.on('enter', (event) => {
-      eventBus.$emit('scrolled-to-bottom')
-    })
-  
-    this.sceneScrolledBottom.on('leave', (event) => {
-      eventBus.$emit('scrolled-from-bottom')
-    })
+    this.modules.push(module)
+
+    return id
   }
 
-  addEventListeners() {
-    eventBus.$once('init', () => {
-      console.log('loaded')
-    })
-    
-    window.addEventListener(
-      'resize',
-      debounce((event) => {
-        eventBus.$emit('window-resized', event)
-      }, 400)
-    )
-    if (document.readyState === "complete") {
-      eventBus.$emit('init', event)
-      console.log('already loaded')
-    } else {
-      console.log('loading...')
-      window.addEventListener('DOMContentLoaded', (event) => {
-        eventBus.$emit('init', event)
+  detach(id) {
+    if (shortid.isValid(id)) {
+      this.modules.forEach((module) => {
+        if (module.id === id) {
+          module.destroy()
+        }
       })
     }
+  }
+
+  createScenes() {
+    this.scenes.push(
+      new CoreScrollScene(
+        () => {
+          return 20
+        },
+        (event) => {
+          eventBus.$emit('scrolled-from-top')
+        },
+        (event) => {
+          eventBus.$emit('scrolled-to-top')
+        },
+        false
+      )
+    )
+
+    this.scenes.push(
+      new CoreScrollScene(
+        () => {
+          return document.body.clientHeight - window.innerHeight
+        },
+        (event) => {
+          eventBus.$emit('scrolled-to-bottom')
+        },
+        (event) => {
+          eventBus.$emit('scrolled-from-bottom')
+        },
+        true
+      )
+    )
+
+    this.scenes.forEach((scene) => {
+      scene.init()
+    })
   }
 }
 

@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "setup": "rm -r ./server/private; composer create-project craftcms/craft ./server/private/craft",
+    "compose": "rm -r ./server/private; composer create-project craftcms/craft ./server/private/craft",
     "serve": "docker kill $(docker ps -q); docker-compose up -d",
-    "config": "cp -r ./server/private/craft/web/ ./server/public/; cp ./config/public/index.php ./server/public; cp ./config/private/craft/config/general.php ./server/private/craft/config; cp ./config/private/craft/config/project.yaml ./server/private/craft/config",
     "stop": "docker-compose down --volumes",
     "craft-install": "docker-compose exec web private/craft/craft install --username=admin --password=password --email=anonymous@mail.com --site-name=Branding --site-url=localhost:8080 --language=en-GB",
     "craft-rebuild": "docker-compose exec web private/craft/craft project-config/rebuild",
+    "craft-config": "cp -r ./server/private/craft/web/ ./server/public/; cp ./config/public/index.php ./server/public; cp ./config/private/craft/config/general.php ./server/private/craft/config; cp ./config/private/craft/config/project.yaml ./server/private/craft/config",
     "watch": "webpack --config webpack.dev.js --watch",
-    "dev": "webpack --config webpack.dev.js"
+    "dev": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -44,6 +45,7 @@
     "postcss-object-fit-images": "^1.1.2",
     "postcss-scss": "^2.0.0",
     "scrollmagic": "^2.0.7",
+    "shortid": "^2.2.14",
     "tailwindcss": "^1.0.1",
     "ts-loader": "^6.0.2",
     "typescript": "^3.5.1",
@@ -54,6 +56,7 @@
     "webpack": "^4.32.0",
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.2",
-    "webpack-merge": "^4.2.1"
+    "webpack-merge": "^4.2.1",
+    "zenscroll": "^4.0.2"
   }
 }

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% include "core/metadata.html.twig" %}
-  <title>{{ currentSite.name }}</title>
+  {% include "core/metadata.twig" %}
+
+  {% hook "seo" %}
 
   <link rel="stylesheet" href="/dest/css/main.css">
 </head>
@@ -11,7 +12,7 @@
     <div class="barba-wipe z-40"></div>
 
     {% block header %}
-      {% include "layout/header.html.twig" %}
+      {% include "layout/header.twig" %}
     {% endblock %}
 
     <div class="main-wrapper z-10" data-barba="wrapper">
@@ -23,7 +24,7 @@
     </div>
 
     {% block footer %}
-      {% include "layout/footer.html.twig" %}
+      {% include "layout/footer.twig" %}
     {% endblock %}
 
   <script src="/dest/js/main.js"></script>
