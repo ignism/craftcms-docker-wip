@@ -1,4 +1,4 @@
-dateModified: 1563709595
+dateModified: 1563985689
 fieldGroups:
   3e1d0607-2fb6-4c16-a220-ef3bea3adbfc:
     name: Options
@@ -101,6 +101,11 @@ globalSets:
               d0c29054-b596-4699-a25a-c1461d10a1ce:
                 required: false
                 sortOrder: 1
+plugins:
+  seo:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.1.0
 sections:
   8c4037c1-6320-45a5-b3c8-6a7a686e3083:
     name: Frontpage
@@ -145,12 +150,6 @@ sections:
     type: structure
     enableVersioning: true
     propagationMethod: all
-    siteSettings:
-      b82ee5e2-9d59-4d65-832a-24ae2b1c7588:
-        enabledByDefault: true
-        hasUrls: true
-        uriFormat: '{slug}'
-        template: pages/page
     structure:
       uid: cfc560c9-d43e-4aec-b354-5e91039a079e
       maxLevels: null
@@ -179,6 +178,12 @@ sections:
                   663457dc-f724-4a4b-9a56-c7e423e46f1a:
                     required: false
                     sortOrder: 1
+    siteSettings:
+      b82ee5e2-9d59-4d65-832a-24ae2b1c7588:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: '{slug}'
+        template: pages/index
 siteGroups:
   ce94689c-b983-4d9f-8e37-db832c57a2ef:
     name: Branding
@@ -196,5 +201,5 @@ system:
   edition: solo
   name: Branding
   live: true
-  schemaVersion: 3.2.15
+  schemaVersion: 3.2.16
   timeZone: America/Los_Angeles

@@ -90,6 +90,24 @@
           <span class="font-bold">max-width</span>
         </div>
       </div>
+
+      <div class="container mt-16">
+        <div class="row h-screen">
+          <div class="col w-1/12"><div class="bg-gray-300 w-full h-full"></div></div>
+          <div class="col w-1/12"><div class="bg-gray-300 w-full h-full"></div></div>
+          <div class="col w-1/12"><div class="bg-gray-300 w-full h-full"></div></div>
+          <div class="col w-1/12"><div class="bg-gray-300 w-full h-full"></div></div>
+          <div class="col w-1/12"><div class="bg-gray-300 w-full h-full"></div></div>
+          <div class="col w-1/12"><div class="bg-gray-300 w-full h-full"></div></div>
+          <div class="col w-1/12"><div class="bg-gray-300 w-full h-full"></div></div>
+          <div class="col w-1/12"><div class="bg-gray-300 w-full h-full"></div></div>
+          <div class="col w-1/12"><div class="bg-gray-300 w-full h-full"></div></div>
+          <div class="col w-1/12"><div class="bg-gray-300 w-full h-full"></div></div>
+          <div class="col w-1/12"><div class="bg-gray-300 w-full h-full"></div></div>
+          <div class="col w-1/12"><div class="bg-gray-300 w-full h-full"></div></div>
+        </div>
+
+      </div>
     </section>
 
     <section class="section">
