@@ -1,7 +1,9 @@
 version: '3'
 services:
   web:
-    image: 'flipbox/php:72-apache'
+    build:
+        context: './config/docker/php'
+        dockerfile: './Dockerfile'
     ports:
         - '8080:80'
         - '445:443'

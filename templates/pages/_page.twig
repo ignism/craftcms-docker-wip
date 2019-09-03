@@ -1,20 +1,16 @@
+{# Default page #}
+
 {% extends "core/base.twig" %}
 
 {% block main %}
 
   <section class="section header-offset">
     <div class="container">
-      <h1>
-        {{ entry.title }}
-      </h1>
-      <div class="row">
-        <div class="col w-6/12">
 
-          {{ entry.body|markdown }}
-
-        </div>
-      </div>
-
+      {% if entry.body %}
+        {{ entry.body }}
+      {% endif %}
+      
     </div>
   </section>
 

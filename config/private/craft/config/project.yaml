@@ -1,21 +1,34 @@
+<<<<<<< HEAD
 dateModified: 1566506547
+=======
+dateModified: 1567519892
+email:
+  fromEmail: anonymous@mail.com
+  fromName: Branding
+  transportType: craft\mail\transportadapters\Sendmail
+>>>>>>> development
 fieldGroups:
+  06893663-0745-4cca-b868-9fc467a189eb:
+    name: Globals
   3e1d0607-2fb6-4c16-a220-ef3bea3adbfc:
     name: Options
+<<<<<<< HEAD
   69231307-712d-4a30-a7e2-d2322c4d3a57:
     name: SEO
   9290ecbe-fcda-490b-8d76-46f83c66d59a:
     name: Footer
   aab2f720-4231-43ae-8dc5-ceb7610f8750:
     name: Header
+=======
+>>>>>>> development
   ca356345-2103-4405-ac65-fbfa523c9f65:
     name: Common
   d5396ac4-df77-4375-a7d8-5fd5adf53bfa:
     name: Content
 fields:
-  4df6f708-812f-4043-bbdb-a3880fd5d0b8:
-    name: 'Header text'
-    handle: headerText
+  3bbc4e63-d3cb-4166-be15-d2e1dc0a2448:
+    name: 'Footer Text'
+    handle: footerText
     instructions: ''
     searchable: true
     translationMethod: none
@@ -28,7 +41,7 @@ fields:
       initialRows: '4'
       charLimit: ''
       columnType: text
-    fieldGroup: aab2f720-4231-43ae-8dc5-ceb7610f8750
+    fieldGroup: 06893663-0745-4cca-b868-9fc467a189eb
     contentColumnType: text
   5eda7e7a-6f9b-4898-8c93-4b844f554d52:
     name: Body
@@ -59,9 +72,9 @@ fields:
       default: '1'
     fieldGroup: 3e1d0607-2fb6-4c16-a220-ef3bea3adbfc
     contentColumnType: boolean
-  d0c29054-b596-4699-a25a-c1461d10a1ce:
-    name: 'Footer text'
-    handle: footerText
+  a322b4ce-063c-4977-bae6-486514132df1:
+    name: 'Header Text'
+    handle: headerText
     instructions: ''
     searchable: true
     translationMethod: none
@@ -74,7 +87,7 @@ fields:
       initialRows: '4'
       charLimit: ''
       columnType: text
-    fieldGroup: 9290ecbe-fcda-490b-8d76-46f83c66d59a
+    fieldGroup: 06893663-0745-4cca-b868-9fc467a189eb
     contentColumnType: text
 globalSets:
   17e7b248-c029-475b-96c8-5b7152f48852:
@@ -87,7 +100,7 @@ globalSets:
             name: Header
             sortOrder: 1
             fields:
-              4df6f708-812f-4043-bbdb-a3880fd5d0b8:
+              a322b4ce-063c-4977-bae6-486514132df1:
                 required: false
                 sortOrder: 1
   9058fa6c-bb92-4134-be45-aff035086ab1:
@@ -100,7 +113,7 @@ globalSets:
             name: Footer
             sortOrder: 1
             fields:
-              d0c29054-b596-4699-a25a-c1461d10a1ce:
+              3bbc4e63-d3cb-4166-be15-d2e1dc0a2448:
                 required: false
                 sortOrder: 1
 plugins:
@@ -109,22 +122,22 @@ plugins:
     enabled: true
     schemaVersion: 3.1.0
 sections:
-  8c4037c1-6320-45a5-b3c8-6a7a686e3083:
-    name: Frontpage
-    handle: frontpage
+  14a7a586-3511-44f7-90a7-9c805dfba50a:
+    name: Home
+    handle: home
     type: single
     enableVersioning: true
     propagationMethod: all
     entryTypes:
-      75105ef3-bfe6-4a51-b3cc-be686326dac7:
-        name: Frontpage
-        handle: frontpage
+      7d5ded90-480f-4cc1-8f06-971b670d82ff:
+        name: Home
+        handle: home
         hasTitleField: false
         titleLabel: ''
         titleFormat: '{section.name|raw}'
         sortOrder: 1
         fieldLayouts:
-          08ad53a0-51c0-43fa-99c6-5977cbafd869:
+          8231739a-35e6-4ded-80ca-9bc702879eda:
             tabs:
               -
                 name: Content
@@ -141,30 +154,57 @@ sections:
                     required: false
                     sortOrder: 1
     siteSettings:
-      b82ee5e2-9d59-4d65-832a-24ae2b1c7588:
+      876ca0f9-4b4a-4fd8-a9d0-511f970d8de0:
         enabledByDefault: true
         hasUrls: true
         uriFormat: __home__
         template: ''
-  db96b55a-ea65-4457-9ac8-e8536dde9718:
-    name: Pages
-    handle: pages
-    type: structure
+  424db2bf-6e46-4e15-826a-12c428955f07:
+    name: Styleguide
+    handle: styleguide
+    type: single
     enableVersioning: true
     propagationMethod: all
-    structure:
-      uid: cfc560c9-d43e-4aec-b354-5e91039a079e
-      maxLevels: null
     entryTypes:
-      17cae89a-cc1e-45db-ade3-4bb4d09152ab:
-        name: Page
-        handle: page
+      5487d65c-fbb9-49bc-99d4-5220b5682d22:
+        name: Styleguide
+        handle: styleguide
         hasTitleField: true
         titleLabel: Title
         titleFormat: ''
-        sortOrder: 2
+        sortOrder: 1
         fieldLayouts:
-          84caa486-1c5f-4156-a136-d985f69464f3:
+          0d9fcc1d-ba76-4565-a2ea-6dff864ab3b5:
+            tabs:
+              -
+                name: Options
+                sortOrder: 1
+                fields:
+                  663457dc-f724-4a4b-9a56-c7e423e46f1a:
+                    required: false
+                    sortOrder: 1
+    siteSettings:
+      876ca0f9-4b4a-4fd8-a9d0-511f970d8de0:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: styleguide
+        template: pages/index
+  c8d17bff-6d59-4839-8fcc-55261f3bd5e4:
+    name: About
+    handle: about
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    entryTypes:
+      a0a3107c-3142-44d9-916f-f19e8d8a672f:
+        name: About
+        handle: about
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          b3400508-9def-46c1-b246-0e5a145fbafb:
             tabs:
               -
                 name: Content
@@ -181,27 +221,33 @@ sections:
                     required: false
                     sortOrder: 1
     siteSettings:
-      b82ee5e2-9d59-4d65-832a-24ae2b1c7588:
+      876ca0f9-4b4a-4fd8-a9d0-511f970d8de0:
         enabledByDefault: true
         hasUrls: true
-        uriFormat: '{slug}'
-        template: pages/index
+        uriFormat: about
+        template: ''
 siteGroups:
-  ce94689c-b983-4d9f-8e37-db832c57a2ef:
+  287a9641-52e1-4928-a06a-9783a272dfca:
     name: Branding
 sites:
-  b82ee5e2-9d59-4d65-832a-24ae2b1c7588:
+  876ca0f9-4b4a-4fd8-a9d0-511f970d8de0:
     name: Branding
     handle: default
     language: en-GB
     hasUrls: true
-    baseUrl: 'http://localhost:8080'
+    baseUrl: '@web'
     sortOrder: 1
     primary: true
-    siteGroup: ce94689c-b983-4d9f-8e37-db832c57a2ef
+    siteGroup: 287a9641-52e1-4928-a06a-9783a272dfca
 system:
   edition: solo
   name: Branding
   live: true
-  schemaVersion: 3.2.16
+  schemaVersion: 3.3.3
   timeZone: Europe/Amsterdam
+users:
+  requireEmailVerification: true
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoVolumeUid: null
+  photoSubpath: ''

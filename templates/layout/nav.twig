@@ -1,12 +1,23 @@
-{% set query = craft.entries().section("pages") %}
-
-{% set entries = query.all() %}
+{% set sections = craft.sections.getAllSections() %}
 
 <ul class="nav-menu">
-  {# Display the entries #}
-  {% for entry in entries %}
-    <li class="nav-menu-item">
-      <a href="{{ entry.url }}">{{ entry.title }}</a>
-    </li>
+
+  {% for section in sections %}
+
+    {% if section.type == "single" %}
+
+      {% set entry = craft.entries.sectionId(section.id).first() %}
+
+      {% if entry.menu == true %}
+
+        <li class="nav-menu-item">
+          <a href="{{ entry.slug }}">{{ entry.title }}</a>
+        </li>
+
+      {% endif %}
+
+    {% endif %}
+
   {% endfor %}
+
 </ul>
