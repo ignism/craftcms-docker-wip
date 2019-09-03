@@ -19,8 +19,6 @@ services:
         DB_DATABASE: craft
         DB_TABLE_PREFIX: craft_
         APACHE_DOCUMENT_ROOT: '/var/www/html/public'
-    links:
-      - database:database
 
   phpmyadmin:
     depends_on:
