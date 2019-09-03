@@ -1,26 +1,13 @@
-<<<<<<< HEAD
-dateModified: 1566506547
-=======
 dateModified: 1567519892
 email:
   fromEmail: anonymous@mail.com
   fromName: Branding
   transportType: craft\mail\transportadapters\Sendmail
->>>>>>> development
 fieldGroups:
   06893663-0745-4cca-b868-9fc467a189eb:
     name: Globals
   3e1d0607-2fb6-4c16-a220-ef3bea3adbfc:
     name: Options
-<<<<<<< HEAD
-  69231307-712d-4a30-a7e2-d2322c4d3a57:
-    name: SEO
-  9290ecbe-fcda-490b-8d76-46f83c66d59a:
-    name: Footer
-  aab2f720-4231-43ae-8dc5-ceb7610f8750:
-    name: Header
-=======
->>>>>>> development
   ca356345-2103-4405-ac65-fbfa523c9f65:
     name: Common
   d5396ac4-df77-4375-a7d8-5fd5adf53bfa:

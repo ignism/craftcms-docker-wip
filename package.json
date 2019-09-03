@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "docker kill $(docker ps -q); docker-compose up -d",
     "stop": "docker-compose down --volumes",
-    "craft-compose": "docker-compose exec web composer create-project craftcms/craft /var/www/html/private/craft; docker-compose exec web composer require ether/seo --working-dir=/var/www/html/private/craft",
+    "craft-compose": "docker-compose exec web composer create-project craftcms/craft /var/www/html/private/craft",
     "craft-plugins": "docker-compose exec web composer require ether/seo --working-dir=/var/www/html/private/craft",
     "craft-config": "cp -r ./server/private/craft/web/ ./server/public/; cp ./config/public/index.php ./server/public",
     "craft-install": "docker-compose exec web private/craft/craft install --site-name=Branding --email=anonymous@mail.com --site-url=localhost:8080 --language=en-GB",
@@ -15,8 +15,8 @@
     "watch": "webpack --config webpack.dev.js --watch",
     "dev": "webpack --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "setup": "npm run craft-install; npm run craft-config; npm run dev",
-    "postinstall": "npx tailwind init; npm run compose; npm run plugins;"
+    "setup": "npm run craft-config; npm run craft-install; npm run craft-build",
+    "postinstall": "npx tailwind init; npm run craft-compose; npm run craft-plugins"
   },
   "keywords": [],
   "author": "",
