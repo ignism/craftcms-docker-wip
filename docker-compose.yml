@@ -17,6 +17,7 @@ services:
         DB_USER: craft
         DB_PASSWORD: craft
         DB_DATABASE: craft
+        DB_TABLE_PREFIX: craft_
         APACHE_DOCUMENT_ROOT: '/var/www/html/public'
     links:
       - database:database

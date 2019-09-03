@@ -3,10 +3,13 @@
 
     {% block header %}
 
+      {% set query = craft.globalSets().handle('header') %}
+      {% set headerEntry = query.one() %}
+
       <nav id="nav-main" class="nav-main flex justify-between items-center" role="navigation">
         <div class="branding">
           <a href="/">
-            <span class="font-bold text-xl uppercase tracking-widest">Branding.</span>
+            <span class="font-bold text-xl uppercase tracking-widest"> {{ headerEntry.headerText }}</span>
           </a>
         </div>
 

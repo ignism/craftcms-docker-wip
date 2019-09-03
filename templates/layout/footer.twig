@@ -5,6 +5,9 @@
 
       {% block footer %}
 
+        {% set query = craft.globalSets().handle('footer') %}
+        {% set footerEntry = query.one() %}
+
         <div class="absolute inset-0 container">
           <div class="flex justify-end">
             <div class="btn-close toggle-footer">
@@ -12,7 +15,7 @@
             </div>
           </div>
         </div>
-
+        <p>{{ footerEntry.footerText }}</p>
         <p>&copy;
           {{ "now"|date("Y") }}
         </p>
