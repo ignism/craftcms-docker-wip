@@ -1,5 +1,0 @@
-# Example, if public folder also needs its own subfolder, i.e. example.com/craft
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteRule ^ /craft%{REQUEST_URI} [L,NC]
-</IfModule>

@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compose": "rm -r ./server/private; composer create-project craftcms/craft ./server/private/craft",
     "serve": "docker kill $(docker ps -q); docker-compose up -d",
     "stop": "docker-compose down --volumes",
-    "craft-install": "docker-compose exec web private/craft/craft install --username=admin --password=password --email=anonymous@mail.com --site-name=Branding --site-url=localhost:8080 --language=en-GB",
-    "craft-rebuild": "docker-compose exec web private/craft/craft project-config/rebuild",
+    "craft-compose": "docker-compose exec web composer create-project craftcms/craft /var/www/html/private/craft",
+    "craft-install": "docker-compose exec web private/craft/craft install --email=anonymous@mail.com --site-url=localhost:8080 --language=en-GB",
     "craft-config": "cp -r ./server/private/craft/web/ ./server/public/; cp ./config/public/index.php ./server/public; cp ./config/private/craft/config/general.php ./server/private/craft/config; cp ./config/private/craft/config/project.yaml ./server/private/craft/config",
+    "craft-rebuild": "docker-compose exec web private/craft/craft project-config/rebuild",
     "watch": "webpack --config webpack.dev.js --watch",
     "dev": "webpack --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
