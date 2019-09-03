@@ -15,8 +15,8 @@
     "watch": "webpack --config webpack.dev.js --watch",
     "dev": "webpack --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "setup": "npm run craft-config; npm run craft-install; npm run craft-build",
-    "postinstall": "npx tailwind init; npm run craft-compose; npm run craft-plugins"
+    "setup": "npm run craft-compose; npm run craft-plugins; npm run craft-config; npm run craft-install; npm run craft-build",
+    "postinstall": "npx tailwind init; docker-compose build"
   },
   "keywords": [],
   "author": "",
