@@ -222,7 +222,7 @@ sites:
     handle: default
     language: en-GB
     hasUrls: true
-    baseUrl: $DEFAULT_SITE_URL
+    baseUrl: '@web'
     sortOrder: 1
     primary: true
     siteGroup: 287a9641-52e1-4928-a06a-9783a272dfca
